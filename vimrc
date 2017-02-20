@@ -17,6 +17,7 @@ highlight clear SpellBad
 highlight SpellBad term=standout ctermbg=6 ctermfg=88
 highlight ExtraWhitespace ctermbg=green guibg=darkgreen
 match ExtraWhitespace /\s\+$/
+
 set hidden
 set wildmenu
 set wildmode=longest:full
@@ -27,7 +28,6 @@ set smartcase
 set backspace=indent,eol,start
 set autoindent
 set nostartofline
-set ruler
 set confirm
 set visualbell
 set t_vb=
@@ -46,11 +46,5 @@ set ruler
 set colorcolumn=+1        " highlight column after 'textwidth'
 set colorcolumn=+1,+2,+3  " highlight three columns after 'textwidth'
 highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
-hi StatusLine ctermbg=16 ctermfg=3 cterm=none
-set laststatus=2
-set statusline=\>%F
-set statusline+=%r
-set statusline+=%m
-set statusline+=%=
-set statusline+=%c,\ 
-set statusline+=%l\ \ \ \ -/-\ \ \ \ \ [T:%L]
+hi User1 ctermfg=3 cterm=none
+set rulerformat=%80(%1*%F%r%m\ \|\ %c,%l\ \|\ [%P]%)
