@@ -1,4 +1,3 @@
-
-# vimrc -> ~/.vimrc
-# *.ttf -> /usr/share/fonts/
-# %gconf.xml -> ~/.gconf/apps/gnome-terminal/profiles
+cp vimrc ~/.vimrc
+cp *.ttf /usr/share/fonts/
+cp gconf.xml ~/.gconf/apps/gnome-terminal/profiles/
