@@ -1,0 +1,12 @@
+LS_COLORS=$LS_COLORS:'*.robot=1;92:*.n1=31:*.n2=32:*.n3=33:*.n4=34:*.n5=35:' ;
+export LS_COLORS
+#aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias vag='vagrant'
+
+ 
+
+
+

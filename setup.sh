@@ -4,3 +4,4 @@ cp vimrc ~/.vimrc
 git config --global core.editor "vim"
 git config --global alias.st status
 git config --global user.name "kassybas"
+cat bashrc_plus >> ~/.bashrc
