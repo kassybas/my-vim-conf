@@ -1,3 +1,6 @@
 # my-vim-conf
 
-Some necessities
+##Starters:
+ mkdir Workspace && cd Workspace && wget -o run-me.sh && sudo bash run-me.sh
+
+
