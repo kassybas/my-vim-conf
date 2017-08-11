@@ -17,6 +17,7 @@ set smartcase
 set foldopen=search
 
 set backspace=indent,eol,start
+
 set autoindent
 set nostartofline
 set confirm
@@ -39,3 +40,48 @@ set colorcolumn=+1,+2,+3  " highlight three columns after 'textwidth'
 highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 hi User1 ctermfg=3 cterm=none
 set rulerformat=%80(%1*%F%r%m\ \|\ %c,%l\ \|\ [%P]%)
+
+" Sets how many lines of history VIM has to remember
+set history=500
+
+" Enable filetype plugins
+filetype plugin on
+filetype indent on
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" :W sudo saves the file
+" (useful for handling the permission-denied error)
+command W w !sudo tee % > /dev/null
+
+"Set , as a aleader for shortcuts
+let mapleader = ","
+let g:mapleader = ","
+nmap <leader>n :set nonumber<cr>
+nmap <leader>N :set number<cr>
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swp//
+
+" Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" New tab
+map <leader>tn :tabnew<cr>
+
+
+" Delete trailing white space on save, useful for some filetypes ;)
+fun! CleanExtraSpaces()
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+    silent! %s/\s\+$//e
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
+endfun
+
+if has("autocmd")
+    autocmd BufWritePre *.js,*.py,*.sh,*.go:call CleanExtraSpaces()
+endif
